@@ -30,14 +30,10 @@ def main():
     with open(args.input_file, 'r+') as f, open(args.out_banned, 'w+') as banned, open(args.out_good, 'w+') as good, open(args.error_file, 'w+') as error:
         proxies = f.read().splitlines()
         for p in proxies:
-            # TODO: Use multithreading to make it go ZOOM ZOOM
+            # TODO: Multi thread to faster check
             log('Attempting to check proxy {}...'.format(p))
-            pr = {
-                'http': p,
-                'https': p
-            }
+            pr = {'http': p, 'https': p}
             flag = check_proxy(p, pr, servers, headers)
-
             if flag == 0:
                 good.write('{}\n'.format(p))
             elif flag == 1:
@@ -57,8 +53,6 @@ def log(message, char='+'):
 
 def verbose_log(message, char='+'):
     print('--> [{}] {}'.format(char, message))
-
-# TODO: Multi thread to faster check
 
 
 def check_proxy(p, proxy, servers, header):
