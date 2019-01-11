@@ -9,10 +9,10 @@
     ```
 - agruments:
   - -i or --input-file: Proxy file to check. Default is proxies.txt
-  - -ob or --out-banned: File to write banned proxies to (banned)'). Default is banned.txt
-  - -of or --out-good: File to write good proxies to (not banned)'). Default is good.txt
-  - -ef or --error-file: File to store errored out proxies'). Default is error.txt
-  - -t or --timeout: 'Timeout for requests to servers.'). Default is 5s
+  - -ob or --out-banned: File to write banned proxies to (banned). Default is banned.txt
+  - -of or --out-good: File to write good proxies to (not banned). Default is good.txt
+  - -ef or --error-file: File to store errored out proxies. Default is error.txt
+  - -t or --timeout: 'Timeout for requests to servers. Default is 5s
 
 ## Customize servers to check:
  - Replace server you need to work with in file servers.txt. One per line
